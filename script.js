@@ -30,4 +30,4 @@ $("section").each(function(i){
 });
 
 
-$("section").hide();
+// $("section").hide();
