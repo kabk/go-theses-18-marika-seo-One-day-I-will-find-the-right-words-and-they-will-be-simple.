@@ -13,6 +13,8 @@ body{
 }
 
 
+
+
 .container{
 	width: 100%;
 	height: 100%;
@@ -20,30 +22,41 @@ body{
 	padding: 0;
 	display: grid;
 	grid-template-columns: repeat(15, 6.666vw);
-	grid-template-rows: repeat(10, 50px);
+	grid-template-rows: repeat(17, 5.8vh);
 	justify-content: center;
  
    
 }
 
 .box{
-	border-right:1pt solid black;
-	border-bottom: 1pt solid black;
+
 	padding: 0px;
 /*	margin:0px;*/
 	
 
 }
 
+
 section{
 	background-color: white;
+	border-left: 1pt solid black;
+	border-top: 1pt solid black;
+	border-right:1pt solid black;
+	border-bottom: 1pt solid black;
+	transition: 0.2s background-color;
+}
 
+.singleSection{
+	background-color: white;
+	position: fixed;
+	z-index: 300;
+	border: 1px solid black;
 
 }
 
 img {
-    max-width: 150%;
-    max-height: 150%;
+    max-width: 120%;
+    max-height: 120%;
  
 }
 
@@ -53,7 +66,7 @@ img {
 	position: fixed;
 	display: grid;
 	grid-template-columns: repeat(15, 6.666vw);
-	grid-template-rows: repeat(10, 50px);
+	grid-template-rows: repeat(17, 5.8vh);
 	top: 0;
 	z-index: -1;
 	border-style: none;
@@ -61,10 +74,13 @@ img {
 
 .textCol{
 	height: 100vh;
-	/*border-right: 1px solid black;*/	
+	border-left: 1px solid black;	
 	padding:4px;
 	
 	overflow: scroll;
+	font-size: 1.2rem;
+
+
 
 	
 
@@ -72,32 +88,44 @@ img {
 }
 
 .textCol:nth-child(1){
-	grid-column: 2/6;
+	grid-column: 1/4;
 	grid-row: 2/10;
-
-	
 
 }
 
 .textCol:nth-child(2){
-	grid-column: 6/10;
+	grid-column: 4/6;
 	grid-row: 2/10;
 	
 }
 
 .textCol:nth-child(3){
-	grid-column: 10/12;
+	grid-column: 6/10;
 	grid-row: 2/10;
 	
 }
 
 .textCol:nth-child(4){
+	grid-column: 10/12;
+	grid-row: 2/10;
+	
+}
+
+.textCol:nth-child(5){
 	grid-column: 12/16;
 	grid-row: 2/10;
 	
 }
 
+section-title{
+	font-style: sans-serif;
+}
 
+ 	a { color: black; }
+    a:hover { color: lime; }
+    a.cyan:hover { color: cyan; }
+    a.red:hover { color: red; }
+    .content a:hover, .content a.green:hover, .content a.red:hover, .content a.blue:hover { color: yellow; }
 
 /* -------------------------------- */
 .title{
@@ -119,119 +147,281 @@ img {
 	grid-column: 2/6;
 	grid-row:2/5;
 	overflow: hidden;
+	border-left: 2pt solid black;
+	border-top: 2pt solid black;
+	display: flex;
+	justify-content: center;
 	
 }
 
 #onedayimg{
 
 	top:5%;
+	align-self: center;
+
 }
 
 #intro1title{
-	z-index: 100;
-  	position: relative;
-	font-size: 2rem;
+  	position: absolute;
+	font-size: 1.7rem;
+	background-color: black;
 	font-family: sans-serif;
-	left:25%;
+	color:white;
 
 }
+
+/*.bar{
+	position: absolute;
+	background-color: black;
+	width:20%;
+	height:4%;
+
+}*/
 
 /* -------------------------------- */
 
 .intro2{
 	grid-column: 1/6;
 	grid-row: 5/8;
-	background-color: cyan;
+	position: relative;
+	/*background-color: cyan;*/
+	overflow: hidden;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	
 
 }
 
-#obliquestrategies{
 
+
+/*#obliquestrategies{
+	position: relative;
+	z-index: 50;
+	/*transform: scale(1.8) translate(35px,-5px);*/
+
+
+/*}*/
+
+#intro2title{
+	z-index: 500;
+  	position: absolute;
+	font-size: 2rem;
+	font-family: 'Marcellus', serif;
+	line-height: 1.5;
+	/*left:50%;
+	top:-150%;*/
+}
+
+.frame1{
+	/*position:absolute;*/
+	/*padding: 2vh;
+	margin:3vh;*/
+	height:80%;
+	width: 95%;
+	
+	border: solid 1px;
+	outline: none;
+	
+}
+
+.frame2{
+	position: absolute;
+	
+	height:60%;
+	width:90%;
+	
+	border: solid 1px;
+
+	outline: none;
 }
 
 /* -------------------------------- */
 .wordworld{
 	grid-column: 6/10;
-	grid-row:2/7;
-	background-color: cyan;
-
+	grid-row:2/9;
+	/*background-color: cyan;
+*/	border-top: 2pt solid black;
+	position: relative;
+	
 }
 
 p1 span {
-  font: 15px Courier, MonoSpace;
-  height: 200px;
+  font: 1.1rem Courier, MonoSpace;
+  height: 15vw;
   position: absolute;
-  width: 10px;
-  left: 47%;
-  top:10%;
+  
+  left: 50%;
+  top:14%;
   transform-origin: center;
 }
 
 #wordworldtext{
-	grid-row:7/16;
+	grid-row:9/16;
 }
 
 /* -------------------------------- */
 .autobio{
 	grid-column: 12/16;
 	grid-row:2/7;
-	background-color: red;
+	/*background-color: red;*/
+	border-top: 2pt solid black;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
 
+#hand{
+	opacity: 0.4;
+	width: 150%;
+	height: 150%;
+}
+
+#handTitle{
+	position: absolute;
+	align-self: center;
+	font-size: 3rem;
+	color: black;
+	text-align: center;
+	font-family: 'Quattrocento', serif;
+	line-height: 1;
 }
 /* -------------------------------- */
 .ambiguity{
 	grid-column: 1/4;
-	grid-row: 8/16;
-	background-color: red;
+	grid-row: 8/20;
+	/*background-color: red;*/
+	overflow: hidden;
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+	
+}
 
+
+#ambiguityTitle{
+	position: absolute;
+	margin-top: 2%;
+	font-family: sans-serif;
+	font-size: 2rem;
+	
+
+}
+
+
+
+#japcopy{
+	-ms-transform: rotate(-90deg); 
+    -ms-transform-origin:25% -15%; 
+    -webkit-transform: rotate(-90deg);
+    -webkit-transform-origin: 25% -15%;
+    transform: rotate(-90deg) scale(0.8);
+    transform-origin: 25% -15%;
+    position:absolute;
+  
+   	align-self: center;
+   	bottom:1%;
+
+
+}
+
+#ambiguityTitle2{
+	position: absolute;
+	font-family: sans-serif;
+	font-size: 2rem;
+	
+	bottom: 3%;
 }
 /* -------------------------------- */
 .unknowable{
 	grid-column: 4/6;
-	grid-row: 8/16;
-	background-color: lime;
+	grid-row: 8/20;
+/*	background-color: lime;*/
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	
+
+}
+#unknowableTitle{
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        position:relative;
+    	margin: 5%;
+        padding:2vw;
+        font-size:2.4rem;
+        white-space: nowrap;
+        line-height: 1.7;
 
 }
 
+.unknowableTitleJap{
+	font-size:2.1rem;
 
+
+}
 
 /* -------------------------------- */
 .hiroko{
 	grid-column: 6/12;
-	grid-row: 7/13;
+	grid-row: 9/15;
 	overflow: hidden;
-	background-color: lime;
+	/*background-color: lime;*/
+	position: relative;
+	
+	
 
 }
 
 #hirokoimg{
-	height: 105%;
-	align-self: left;
-	position: relative;
-	top:-3%;
+	float:right;
+	top:-15%;
+	right:23%;
+	position: absolute;
+	opacity: 0.85;
+	transform: scale(1.02);
+	z-index: 0;
+
 }
+
 
 #hirokotextjap{
+	position: absolute;
+	font-size: 3.5rem;
+	top: 2%;
+	border-right: solid black 1px;
+	border-left:solid black 1px;
 	  -webkit-writing-mode: vertical-rl;
       -ms-writing-mode: tb-rl;
-        writing-mode: vertical-rl;
-        position:relative;
-        top:8%;
-        right:14%;
-  		float: right;
-  		font-size: 2.1rem;
-  		font-weight: ;
+      writing-mode: vertical-rl;
+     z-index: 1;
+     background-color: white;
+
+
+    
+
 }
 
+	
+
 #hirokotexteng{
-	max-width: 50%;
-	transform: rotate(90deg);
-	font-size: 2rem;
-	float: right;
+
 	position: absolute;
-	left:54%;
-	top:57%;
+	margin-top:5%;
+	left: 4%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border-top: solid black 1px;
+	border-bottom: solid black 1px; 
+	align-self: center;
+	background-color: white;
+	font-family: 'Baskerville', serif;
+	z-index: 3;
+	/*transform: rotate(90deg);*/
+	font-size: 2rem;
+	line-height: 1.3;
 
 	}
 
@@ -242,8 +432,35 @@ p1 span {
 .noting{
 	grid-column: 12/16;
 	grid-row: 7/12; 
-	background-color: cyan;
+	/*background-color: cyan;*/
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	
 }
+.arrow{
+	position: relative;
+	align-self: center;
+	justify-content: center;
+	transform: rotate(45deg) scale(5);
+
+
+}
+#translating{
+	position: absolute;
+	left:10%;
+	margin-top: 8%;
+	font-family: courier;
+	font-size: 2rem;
+}
+#ambiguity{
+	position:absolute;
+	right:10%;
+	bottom:10%;
+	font-family: courier; 
+	font-size: 2rem;
+}
+
 /* -------------------------------- */
 .wordsdontcommunicate{
 	grid-column: 12/16 ;
@@ -255,8 +472,11 @@ p1 span {
 
 .pastispresent{
 	grid-column: 6/12 ;
-	grid-row: 13/15;
-	background-color: red;
+	grid-row: 15/17;
+	/*background-color: red;*/
+	/*display: flex;
+	align-items: center;*/
+	position: relative;
 	
 }
 
@@ -266,21 +486,104 @@ p1 span {
 	position: relative;
 	left: 15%;
 	top:12%;
-
+	font-family:  'Marcellus', serif;
+	/*justify-content: center;*/
+	bottom:50%;
 
 }
 /* -------------------------------- */
-.afterthought{
+.conclusion{
 	grid-column: 10/12;
-	grid-row:2/7;
-	background-color: lime;
+	grid-row:2/9;
+	background-color: black;
+	border-top: 2pt solid black;
+	overflow: hidden;
+
+
+	
 }
+
+path {
+  fill: transparent;
+
+  width:100%;
+  height: 100%;
+  transform: rotate(40deg) scale(1.2);
+  transform-origin: 100% -50%;
+
+
+}
+
+text {
+
+  fill: white;
+  font-size: 2.6rem;
+  letter-spacing: 0.23rem;
+}
+
+#viewBox{
+	position: relative;
+/*	transform: translate(0%, -100%);*/
+
+}
+
+
+
+.conclusionTitle{
+	position: relative;
+	font-size: 2.6rem;
+	margin-left: 1%;
+	color:white;
+	
+
+}
+
+
+
+
+
+
 
 /* -------------------------------- */
 .info{
 	grid-column: 6/ 12;
-	grid-row: 15 /16;
+	grid-row: 17/20;
 
 }
 
+/*-------------------------*/
+
+/*@media print{
+
+
+	.textCol{
+		overflow: visible;
+
+	}
+
+	.textWraps{
+		position: absolute;
+		
+	}
+
+
+}*/
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: black; 
+}
 

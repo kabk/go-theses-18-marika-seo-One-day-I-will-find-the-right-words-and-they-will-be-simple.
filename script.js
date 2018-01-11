@@ -1,11 +1,11 @@
 // $("p1").lettering();
 
-var time = 0;
-setInterval(function(){
-	time+=0.3;
-	 // $(".wordworld").css("transform", "rotate("+time+"deg)");
+// var time = 0;
+// setInterval(function(){
+// 	time+=0.3;
+// 	 // $(".wordworld").css("transform", "rotate("+time+"deg)");
 
-},30)
+// },30)
 
 
 
@@ -20,27 +20,66 @@ $(".textWraps").each(function(i){
 	$(this).addClass("textWrap"+i);
 });
 
+
+var bgColours = ["MidnightBlue", "Cornsilk", "OrangeRed", "OliveDrab", "DimGrey", "PowderBlue","Silver","SteelBlue","Black","Thistle","RosyBrown",];
+
 $("section").each(function(i){
+
+	var $this = $(this);
+
+	var w = $this.width();
+	var h = $this.height();
+	var pos = $this.position();
+	var x = pos.left;
+	var y = pos.top;
+
+	var currentClass = $this.attr("class");
+
+	$(this).hover(function(){
+		$(this).css("background-color", bgColours[i]);
+	},function(){
+		$(this).css("background-color", "white");
+	});
+
 	$(this).click(function(){
+
 		if (textDisplay===false) {
 			textDisplay=true;
-			$("section").hide().css("z-index",-5);
+			$("section").hide().css("z-index",-6);
 			$(".textWraps").hide();
-			$(".textWrap"+i).show().css("z-index",5);
+			$(".textWrap"+i).fadeIn().css("z-index",6);
+			// $(this).show();
 
-			console.log(i);
+			$("body").prepend("<div class='singleSection'>"+$this.html()+"</div>");
+			$(".singleSection").css({
+				top:　y+"px",
+				left:　x+"px",
+				width: 2+w+"px",
+				height:　h+"px"
+			}).addClass(currentClass);
 
-			$(this).show();
+			$(".singleSection").click(function(){
+				textDisplay=false;
+				$(".singleSection").remove();
+
+				$(".textWraps").hide().css("z-index",-6);	
+				$("section").show().css("z-index",6);
+			});
+
+
 		} else {
 			textDisplay=false;
-			$("section").show().css("z-index",-5);
-			$(".textWraps").hide();
 		}
-
 	});
+
+	$(".back").click(function(){
+		textDisplay=false;
+		$(".singleSection").remove();
+
+		$(".textWraps").hide().css("z-index",-6);	
+		$("section").show().css("z-index",6);
+	});
+
+
+
 });
-
-
-
-
-// $("section").hide();
