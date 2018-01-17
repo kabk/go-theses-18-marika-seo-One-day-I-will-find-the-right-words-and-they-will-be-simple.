@@ -21,7 +21,7 @@ $(".textWraps").each(function(i){
 });
 
 
-var bgColours = ["MidnightBlue", "Cornsilk", "OrangeRed", "OliveDrab", "DimGrey", "PowderBlue","Silver","SteelBlue","Black","Thistle","RosyBrown",];
+var bgColours = ["black", "gray", "gray", "black", "gray", "black","gray","gray","black","gray","black",];
 
 $("section").each(function(i){
 
@@ -54,7 +54,7 @@ $("section").each(function(i){
 			$(".singleSection").css({
 				top:　y+"px",
 				left:　x+"px",
-				width: 2+w+"px",
+				width: 1+w+"px",
 				height:　h+"px"
 			}).addClass(currentClass);
 
@@ -79,7 +79,5 @@ $("section").each(function(i){
 		$(".textWraps").hide().css("z-index",-6);	
 		$("section").show().css("z-index",6);
 	});
-
-
 
 });

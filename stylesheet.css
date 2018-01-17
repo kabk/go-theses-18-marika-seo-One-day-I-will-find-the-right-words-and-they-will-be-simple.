@@ -13,7 +13,15 @@ body{
 }
 
 
-
+marquee{
+	position: fixed;
+	height: 5vh;
+	font-size: 2.1rem;
+	padding-top: .5rem;
+	top: 0;
+	left: 0;
+	border-bottom: 3px solid black;
+}
 
 .container{
 	width: 100%;
@@ -24,6 +32,7 @@ body{
 	grid-template-columns: repeat(15, 6.666vw);
 	grid-template-rows: repeat(17, 5.8vh);
 	justify-content: center;
+	position: fixed;
  
    
 }
@@ -51,7 +60,7 @@ section{
 	position: fixed;
 	z-index: 300;
 	border: 1px solid black;
-
+	/*box-sizing: border-box;*/
 }
 
 img {
@@ -75,7 +84,7 @@ img {
 .textCol{
 	height: 100vh;
 	border-left: 1px solid black;	
-	padding:4px;
+	padding:9px;
 	
 	overflow: scroll;
 	font-size: 1.2rem;
@@ -121,11 +130,26 @@ section-title{
 	font-style: sans-serif;
 }
 
- 	a { color: black; }
-    a:hover { color: lime; }
-    a.cyan:hover { color: cyan; }
-    a.red:hover { color: red; }
-    .content a:hover, .content a.green:hover, .content a.red:hover, .content a.blue:hover { color: yellow; }
+
+
+sup{
+	font-family:sans-serif;
+	font-size: .7rem;
+	color: gray;
+}
+.footnote{
+	font-family:sans-serif;
+	font-size: .7rem;
+	position: sticky;
+	left:0px;
+	bottom:auto;
+	word-wrap: break-word;
+	
+}
+element.style {
+    margin-left: 0px;
+    padding-left: 0px;
+}
 
 /* -------------------------------- */
 .title{
@@ -144,7 +168,7 @@ section-title{
 /* -------------------------------- */
 
 .intro1{
-	grid-column: 2/6;
+	grid-column: 1/6;
 	grid-row:2/5;
 	overflow: hidden;
 	border-left: 2pt solid black;
@@ -170,13 +194,7 @@ section-title{
 
 }
 
-/*.bar{
-	position: absolute;
-	background-color: black;
-	width:20%;
-	height:4%;
 
-}*/
 
 /* -------------------------------- */
 
@@ -236,7 +254,11 @@ section-title{
 
 	outline: none;
 }
-
+#fill{
+	background-color: gray;
+	height: 100%;
+	width:100%;
+}
 /* -------------------------------- */
 .wordworld{
 	grid-column: 6/10;
@@ -333,6 +355,17 @@ p1 span {
 	
 	bottom: 3%;
 }
+.description{
+	font-size: 1rem;
+	font-family: sans-serif;
+	color: gray;
+}
+
+/*.lumine{
+	max-width: 80%;
+	margin-bottom: 10vh;
+
+}*/
 /* -------------------------------- */
 .unknowable{
 	grid-column: 4/6;
@@ -464,8 +497,14 @@ p1 span {
 /* -------------------------------- */
 .wordsdontcommunicate{
 	grid-column: 12/16 ;
-	grid-row: 12/16;
-	background-color: lime;
+	grid-row: 12/20;
+	/*background-color: lime;*/
+}
+
+#contributors{
+	opacity: 50%;
+
+
 }
 
 /* -------------------------------- */
@@ -548,7 +587,20 @@ text {
 .info{
 	grid-column: 6/ 12;
 	grid-row: 17/20;
+	display: flex;
+	justify-content: center;
 
+
+}
+
+#colophon{
+	font-size: 2rem;
+	font-family: 'Great Vibes', cursive;
+	margin-top: 2vh;
+}
+
+.colophon{
+	font-size: 4rem;
 }
 
 /*-------------------------*/
@@ -585,5 +637,98 @@ text {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: black; 
+}
+
+
+.print, #cover{
+	display: none;
+
+}
+
+
+
+
+
+
+@media print {
+
+	#cover{
+		width: 100% !important;
+		height: 100% !important;
+		font-size: 40pt !important;
+		overflow: hidden;
+
+	}
+
+	.container{
+		overflow: scroll;
+		position: relative;
+	}
+
+	.container{
+		display: none;
+	}
+
+	.textWraps{
+		position: relative;
+		display: inline;
+		z-index: 4;		
+	}
+
+	.textCol{
+		overflow: hidden;
+		height: auto;
+		font-size: 11.5pt;
+		/*margin: 3%;*/
+
+	}
+	marquee{
+		display: none;
+	}
+
+	.fullPage {
+		page-break-before: always;
+		display: initial;
+	}
+
+
+	img{
+		max-width: 100%;
+		max-height: 100%;
+
+	}
+	#cover, .print{
+		display: block;
+	}
+
+	.fullPage.print{
+		width: 100% !important;
+		height: 100% !important;
+		font-size: 40pt !important;
+		float:auto;
+	}
+
+	.chaptertitle{
+
+		font-size: 24pt !important;
+	}
+
+	#wittgenstein1{
+		display: none;
+	}
+
+	#columnwidth{
+		margin-right: 10%;
+	}
+	.footnote{
+		display: none;
+	}
+	.colophontext{
+		display: none;
+	}
+	#conclusioncover{
+		transform: scale(0.5);
+
+	}
 }
 
